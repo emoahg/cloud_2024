@@ -1,4 +1,4 @@
-package pers.emo.cloud.entities;
+package pers.emo.payment.entities;
 
 import java.math.BigDecimal;
 import java.util.Date;

@@ -1,6 +1,6 @@
-package pers.emo.cloud.mapper;
+package pers.emo.payment.mapper;
 
-import pers.emo.cloud.entities.Pay;
+import pers.emo.payment.entities.Pay;
 import tk.mybatis.mapper.common.Mapper;
 
 public interface PayMapper extends Mapper<Pay> {
