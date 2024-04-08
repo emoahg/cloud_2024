@@ -7,6 +7,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 import pers.emo.payment.dto.PayDTO;
 import pers.emo.payment.entities.Pay;
+import pers.emo.payment.resp.ResultData;
 import pers.emo.payment.service.PayService;
 
 import java.util.List;
@@ -21,10 +22,10 @@ public class PayController {
 
     @PostMapping("/add")
     @Operation(summary = "新增", description = "新增支付流水方法,json串做参数")
-    public String addPay(@RequestBody Pay pay){
+    public ResultData<String> addPay(@RequestBody Pay pay) {
         System.out.println(pay.toString());
         int i = payService.add(pay);
-        return "成功插入记录，返回值："+i;
+        return ResultData.success("成功插入记录，返回值：" + i);
     }
 
     @DeleteMapping(value = "/del/{id}")
@@ -32,25 +33,26 @@ public class PayController {
     public Integer deletePay(@PathVariable("id") Integer id) {
         return payService.delete(id);
     }
+
     @PutMapping(value = "/update")
     @Operation(summary = "修改", description = "修改支付流水方法")
-    public String updatePay(@RequestBody PayDTO payDTO){
+    public ResultData<String> updatePay(@RequestBody PayDTO payDTO) {
         Pay pay = new Pay();
         BeanUtils.copyProperties(payDTO, pay);
 
         int i = payService.update(pay);
-        return "成功修改记录，返回值："+i;
+        return ResultData.success("成功修改记录，返回值：" + i);
     }
 
     @GetMapping(value = "/get/{id}")
-    @Operation(summary = "按照ID查流水",description = "查询支付流水方法")
-    public Pay getById(@PathVariable("id") Integer id){
-        return payService.getById(id);
+    @Operation(summary = "按照ID查流水", description = "查询支付流水方法")
+    public ResultData<Pay> getById(@PathVariable("id") Integer id) {
+        return ResultData.success(payService.getById(id));
     }
 
     @GetMapping(value = "/all")
-    @Operation(summary = "查询所有流水",description = "查询支付流水方法")
-    public List<Pay> getAll(){
-        return payService.getAll();
+    @Operation(summary = "查询所有流水", description = "查询支付流水方法")
+    public ResultData<List<Pay>> getAll() {
+        return ResultData.success(payService.getAll());
     }
 }
