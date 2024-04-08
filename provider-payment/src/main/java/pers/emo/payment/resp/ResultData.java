@@ -23,8 +23,8 @@ public class ResultData<T> {
     }
 
     public static <T> ResultData<T> fail() {
-        return new ResultData<T>().setCode(ReturnCodeEnum.RC999.getCode())
-                .setMessage(ReturnCodeEnum.RC999.getMessage())
+        return new ResultData<T>().setCode(ReturnCodeEnum.RC500.getCode())
+                .setMessage(ReturnCodeEnum.RC500.getMessage())
                 .setData(null);
     }
 
