@@ -1,4 +1,4 @@
-package pers.emo.payment.resp;
+package pers.emo.commons.resp;
 
 import lombok.Getter;
 import lombok.ToString;

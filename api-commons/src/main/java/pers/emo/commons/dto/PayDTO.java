@@ -1,4 +1,4 @@
-package pers.emo.order.dto;
+package pers.emo.commons.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -3,11 +3,13 @@ package pers.emo.payment.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.apache.catalina.core.ApplicationContext;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
-import pers.emo.payment.dto.PayDTO;
+import pers.emo.commons.dto.PayDTO;
+import pers.emo.commons.exp.GlobalExceptionHandler;
+import pers.emo.commons.resp.ResultData;
 import pers.emo.payment.entities.Pay;
-import pers.emo.payment.resp.ResultData;
 import pers.emo.payment.service.PayService;
 
 import java.util.List;
@@ -19,6 +21,9 @@ import java.util.List;
 public class PayController {
 
     private final PayService payService;
+
+    private final GlobalExceptionHandler globalExceptionHandler;
+
 
     @PostMapping("/add")
     @Operation(summary = "新增", description = "新增支付流水方法,json串做参数")

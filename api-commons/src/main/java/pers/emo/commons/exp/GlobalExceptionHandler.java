@@ -1,11 +1,11 @@
-package pers.emo.payment.exp;
+package pers.emo.commons.exp;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import pers.emo.payment.resp.ResultData;
-import pers.emo.payment.resp.ReturnCodeEnum;
+import pers.emo.commons.resp.ResultData;
+import pers.emo.commons.resp.ReturnCodeEnum;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {

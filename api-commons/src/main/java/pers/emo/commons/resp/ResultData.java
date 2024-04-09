@@ -1,4 +1,4 @@
-package pers.emo.order.resp;
+package pers.emo.commons.resp;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

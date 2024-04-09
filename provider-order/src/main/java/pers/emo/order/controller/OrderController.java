@@ -4,8 +4,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-import pers.emo.order.dto.PayDTO;
-import pers.emo.order.resp.ResultData;
+import pers.emo.commons.dto.PayDTO;
+import pers.emo.commons.resp.ResultData;
 
 @RestController
 @RequestMapping("/order")
