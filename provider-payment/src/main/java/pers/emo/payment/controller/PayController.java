@@ -30,8 +30,8 @@ public class PayController {
 
     @DeleteMapping(value = "/del/{id}")
     @Operation(summary = "删除", description = "删除支付流水方法")
-    public Integer deletePay(@PathVariable("id") Integer id) {
-        return payService.delete(id);
+    public ResultData<Integer> deletePay(@PathVariable("id") Integer id) {
+        return ResultData.success(payService.delete(id));
     }
 
     @PutMapping(value = "/update")

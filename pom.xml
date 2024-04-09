@@ -11,6 +11,7 @@
     <modules>
         <module>mybatis-generator</module>
         <module>provider-payment</module>
+        <module>provider-order</module>
     </modules>
 
     <properties>
